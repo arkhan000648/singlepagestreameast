@@ -1,0 +1,956 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastsport.fit</title>
+    <meta name="description" content="Watch live sports for free in HD: NFL, NBA, UFC, MLB, soccer & more on StreamEast mirrors. No sign-up, no subscription – instant access to every game, anywhere in 2026">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+
+    
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #FF4757;
+            --secondary: #2C3E50;
+            --accent: #1E90FF;
+            --dark: #0A0E27;
+            --light: #FFFFFF;
+            --gray: #B0B0B0;
+            --card: rgba(255, 255, 255, 0.05);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--light);
+            background: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+            box-shadow: 0 2px 20px rgba(255, 71, 87, 0.3);
+        }
+        
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .main-nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .main-nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .main-nav a:hover {
+            color: var(--primary);
+        }
+        
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            transition: 0.3s;
+        }
+        
+        /* Main */
+        main {
+            margin-top: 70px;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb ol {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray);
+        }
+        
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 71, 87, 0.1), rgba(30, 144, 255, 0.1));
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+        
+        .hero h1 .brand {
+            color: var(--primary);
+        }
+        
+        .hero-img {
+            margin: 40px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .hero-desc {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--gray);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        /* Content */
+        .content-section {
+            padding: 60px 20px;
+        }
+        
+        .content-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            background: var(--card);
+            border-left: 4px solid var(--primary);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .highlight h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Sports Grid */
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+        }
+        
+        .sport-card {
+            background: var(--card);
+            border-radius: 15px;
+            padding: 35px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sport-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 71, 87, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(255, 71, 87, 0.3);
+        }
+        
+        .sport-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .sport-card h3 {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin: 20px 0 10px;
+        }
+        
+        .sport-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--gray);
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .feature:hover {
+            background: rgba(255, 71, 87, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .feature h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature p {
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* Two Columns */
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 60px 20px;
+        }
+        
+        .col {
+            background: var(--card);
+            padding: 40px;
+            border-radius: 15px;
+        }
+        
+        .col h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .col h3 {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin: 25px 0 15px;
+        }
+        
+        .col p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--gray);
+        }
+        
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            margin: 60px 20px;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 35px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: white;
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 20px;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        
+        .faq-item {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            background: rgba(255, 71, 87, 0.08);
+            transform: translateX(5px);
+        }
+        
+        .faq-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .faq-item p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.95);
+            padding: 60px 20px 30px;
+            border-top: 2px solid var(--primary);
+            margin-top: 80px;
+        }
+        
+        .footer h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .footer > p {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .tags span {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 14, 39, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            
+            .main-nav.active {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .features h2,
+            .faq h2 {
+                font-size: 2rem;
+            }
+            
+            .sports-grid,
+            .features-grid,
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta {
+                margin: 40px 10px;
+                padding: 50px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.4rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-desc {
+                font-size: 1rem;
+            }
+        }
+
+/* Gradient-Free Quick Links */
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin: 60px auto;
+}
+
+.quick-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--light);
+
+    /* NO GRADIENT */
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 10px; /* rectangle */
+    transition: all 0.3s ease;
+    text-align: center;
+    letter-spacing: 0.4px;
+}
+
+/* Hover */
+.quick-link:hover {
+    background: rgba(255, 71, 87, 0.12);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(255, 71, 87, 0.35);
+}
+
+/* Active / Focus */
+.quick-link:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.35);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .quick-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="logo">StreamEast</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <a href="#sports">Sports</a>
+                <a href="#features">Features</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+               
+            </nav>
+
+
+            <section class="hero">
+                <h1><span class="brand">StreamEast</span> Watch Every Sports Game Live in  HD</h1>
+
+                <div class="quick-links">
+   <a href="https://streameast.fit/" class="quick-link" target="_blank">
+      Start Watching Now
+    </a>
+
+    <a href="https://streameast.fit/nfl-streams/" class="quick-link" target="_blank">
+        🏈 NFL Streams
+    </a>
+
+
+    <a href="https://streameast.fit/nba-streams/" class="quick-link" target="_blank">
+        🏀 NBA Streams
+    </a>
+
+    <a href="https://streameast.fit/soccer" class="quick-link" target="_blank">
+         ⚽ Soccer Streams
+    </a>
+
+    <a href="https://streameast.fit/mma-streams" class="quick-link" target="_blank">
+        👊 MMA Streams
+    </a>
+    <a href="https://streameast.fit/nhl-streams/" class="quick-link" target="_blank">
+        🏒 NHL Streams
+    </a>
+    <a href="https://streameast.fit/mlb-streams" class="quick-link" target="_blank">
+        ⚾ MLB Streams
+    </a>
+    <a href="https://streameast.fit/formula-1-streams/" class="quick-link" target="_blank">
+        🏎️ F1 Streams
+    </a>
+</div>
+                
+                <div class="hero-img">
+                    <img src="https://fastsport.fit/ec.webp" 
+                         alt="StreamEast live streaming for Soccer, NBA, NFLstreams, MMA , UFC and More"
+                         width="1200" 
+                         height="630"
+                         loading="eager"
+                         fetchpriority="high">
+                </div>
+                
+                <p class="hero-desc">
+  Welcome to StreamEast—your all-in-one sports hub for tracking what’s live, what’s next, and what matters most.
+  From NBA and NFL to NHL, MLB, UFC, WWE, NCAAB, and international soccer, StreamEast organizes matchups,
+  schedules, and key game details in one place so you can stay on top of your favorite leagues all year.
+</p>
+</section>
+
+<section class="content-section">
+  <h2>Why Fans Use StreamEast Every Week</h2>
+  <p>
+    StreamEast is built for game day speed. Instead of digging through multiple sites, you can scan matchups,
+    check start times, follow key storylines, and get to the information you need quickly. It’s designed to
+    keep you connected to the action—before, during, and after the final whistle.
+  </p>
+
+  <p>
+    The experience focuses on clarity and consistency. Big nights can get noisy online, so StreamEast keeps
+    the layout simple and the navigation predictable—helping you find the league you want, the matchup you’re
+    looking for, and the latest updates without distraction.
+  </p>
+
+  <div class="highlight">
+    <h3>The StreamEast Difference</h3>
+    <p>
+      StreamEast keeps sports organized with clean pages for leagues, matchups, and major events. You’ll find
+      schedules, live context, and quick links to official sources and coverage where available. Whether it’s
+      a regular-season clash or a championship-stage showdown, the goal is the same: make it easy to follow.
+    </p>
+  </div>
+</section>
+
+<section class="sports-grid" id="sports">
+  <article class="sport-card">
+    <h2>NBA Basketball</h2>
+    <p>
+      Follow the NBA from opening night through the playoff push. Track standings, spotlight games, star
+      performances, and rivalry matchups with pages that keep the latest context easy to find.
+    </p>
+    <h3>Postseason Spotlight</h3>
+    <p>
+      When the playoffs arrive, StreamEast highlights series schedules, results, and momentum swings—so you
+      can stay current from round one to the Finals.
+    </p>
+  </article>
+
+  <article class="sport-card">
+    <h2>NFL Football</h2>
+    <p>
+      Stay on top of weekly matchups, prime-time games, injuries, and standings. StreamEast helps you follow
+      the season arc from Week 1 through the final stretch.
+    </p>
+    <h3>Playoffs & Championship Weekend</h3>
+    <p>
+      Get quick access to bracket updates, kickoff times, and key storylines from the first playoff weekend
+      through the title game.
+    </p>
+  </article>
+
+  <article class="sport-card">
+    <h2>NHL Hockey</h2>
+    <p>
+      Keep up with fast-moving NHL seasons with matchup hubs, team trends, and rivalry coverage. From tight
+      divisional races to standout performances, everything stays organized.
+    </p>
+    <h3>Stanley Cup Run</h3>
+    <p>
+      Follow the road to the Cup with series tracking, game results, and headline moments through every round.
+    </p>
+  </article>
+
+  <article class="sport-card">
+    <h2>MLB Baseball</h2>
+    <p>
+      From early-season series to late-summer pennant races, StreamEast helps you track matchups, pitching
+      duels, and big moments across the calendar.
+    </p>
+    <h3>October Baseball</h3>
+    <p>
+      Stay updated with postseason schedules, series progress, and key performances through the championship.
+    </p>
+  </article>
+
+  <article class="sport-card">
+    <h2>UFC & Combat Sports</h2>
+    <p>
+      Browse upcoming cards, main events, and fight-week headlines with clear event pages and quick access to
+      details like start times and bout lineups.
+    </p>
+    <h3>Main Cards & Big Nights</h3>
+    <p>
+      StreamEast highlights major events with focused coverage so you can follow the build-up and outcomes
+      without chasing scattered info.
+    </p>
+  </article>
+
+  <article class="sport-card">
+    <h2>International Soccer</h2>
+    <p>
+      Keep tabs on leagues and tournaments across regions. StreamEast organizes fixtures, tables, and major
+      matchdays so you can follow weekends, midweek rounds, and international breaks.
+    </p>
+    <h3>Top Competitions</h3>
+    <p>
+      From continental tournaments to global events, StreamEast makes it easier to track schedules and results
+      across time zones.
+    </p>
+  </article>
+</section>
+
+<section class="features" id="features">
+  <div class="container">
+    <h2>StreamEast Features</h2>
+
+    <div class="features-grid">
+      <div class="feature">
+        <h3>Clean Matchup Pages</h3>
+        <p>
+          Quickly scan what’s live and what’s next, with organized pages built for fast browsing on game day.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>Responsive on Any Screen</h3>
+        <p>
+          The layout adapts smoothly across phones, tablets, laptops, and desktops for a consistent experience.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>Live Context & Updates</h3>
+        <p>
+          Follow score context, scheduling info, and key details without constantly jumping between tabs.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>All-Day Sports Coverage</h3>
+        <p>
+          With events worldwide, there’s almost always something happening. StreamEast helps you find it fast.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>Quick League Navigation</h3>
+        <p>
+          Browse by sport, league, or time so you can reach the matchup you want in fewer steps.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>Built for Busy Nights</h3>
+        <p>
+          StreamEast is designed to remain easy to use when schedules are packed and attention is split.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="two-col">
+  <div class="col">
+    <h2>How to Use StreamEast</h2>
+    <p>
+      Open StreamEast, choose your sport, and browse matchups by start time. Each event page is structured to
+      help you find the most important details quickly.
+    </p>
+
+    <h3>What You Need</h3>
+    <p>
+      Any modern browser and a stable internet connection. No special setup—just a straightforward way to keep
+      up with the sports you follow.
+    </p>
+  </div>
+
+  <div class="col">
+    <h2>Coverage Across Major Leagues</h2>
+    <p>
+      StreamEast highlights top leagues and competitions throughout the year—NBA, NFL, NHL, MLB, UFC, WWE,
+      NCAAB, F1, and leading soccer events—so you can follow what matters most in one place.
+    </p>
+
+    <h3>Big Events Included</h3>
+    <p>
+      Regular season, playoffs, finals, and headline matchups are all organized to help you stay current from
+      start to finish.
+    </p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Join the StreamEast Community</h2>
+    <p>
+      Keep track of the games you care about with quick browsing, clean pages, and an experience designed for
+      sports fans on the go.
+    </p>
+    <a href="#" class="cta-btn">Explore Today’s Matchups</a>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <h2>StreamEast FAQs</h2>
+
+    <div class="faq-item">
+      <h3>What is StreamEast?</h3>
+      <p>
+        StreamEast is a sports hub that organizes matchups, schedules, and league coverage so fans can follow
+        what’s happening across major competitions.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What leagues are covered?</h3>
+      <p>
+        StreamEast typically highlights major leagues and tournaments including NBA, NFL, NHL, MLB, UFC, WWE,
+        NCAAB, international soccer, and more depending on the season.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I use StreamEast on mobile?</h3>
+      <p>
+        Yes. StreamEast is designed to work smoothly on phones, tablets, and computers with a responsive layout.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I find a game quickly?</h3>
+      <p>
+        Browse by sport and start time, or use league sections to jump straight to the matchup you’re looking for.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What makes StreamEast different?</h3>
+      <p>
+        StreamEast focuses on speed and simplicity—organized matchups, clean pages, and easy navigation built
+        for busy sports schedules.
+      </p>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <h2>StreamEast - Premium Sports Streaming Platform</h2>
+                <p>StreamEast has established itself as the premier destination for live sports streaming, delivering HD quality broadcasts to millions of passionate fans worldwide. StreamEast specializes in comprehensive coverage of professional sports leagues and international tournaments, providing reliable entertainment for basketball, football, hockey, baseball, combat sports, WWE Wrestling and soccer enthusiasts. Trust StreamEast for all your sports streaming needs.</p>
+                
+                <div class="tags">
+                    <span>NBA Streams on StreamEast</span>
+                    <span>NFL Streaming</span>
+                    <span>NHL Hockey</span>
+                    <span>MLB Games</span>
+                    <span>UFC Fights</span>
+                    <span>MMA Events</span>
+                    <span>Boxing Matches</span>
+                    <span>Soccer Streams Worldwide</span>
+                    <span>WWE Streams</span>
+                    <span>NCAAB Streaming</span>
+                    <span>Formula 1 Streaming</span>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2026 StreamEast - Professional live sports streaming platform delivering premium HD entertainment across major leagues and international tournaments worldwide. StreamEast brings you closer to the games you love.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mainNav').classList.remove('active');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
+    
+
+</body></html>
